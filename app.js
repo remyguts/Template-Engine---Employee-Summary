@@ -16,26 +16,36 @@ const init = () => {
 
 function promptUser() {
   console.log("build your team");
-  return inquirer.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "What is your manager name?"
-    },
-    {
-      type: "input",
-      name: "id",
-      message: "What is your id?"
-    },
-    {
-      type: "input",
-      name: "email",
-      message: "what is your email?"
-    },
-    {
-      type: "input",
-      name: "officeNumber",
-      message: "what is your office number"
-    }
-  ]);
+  return inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is your manager name?"
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is your id?"
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "what is your email?"
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "what is your office number"
+      }
+    ])
+    .then(manager => {
+      employees.push(
+        new Manager(manager.name, manager.id, manager.email, manager.office)
+      );
+      addHTML(
+        new Manager(manager.name, manager.id, manager.email, manager.office)
+      );
+      promptTeamMember();
+    });
 }
