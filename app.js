@@ -26,7 +26,7 @@ function promptUser() {
       {
         type: "input",
         name: "id",
-        message: "What is your id?"
+        message: "What is your id #?"
       },
       {
         type: "input",
@@ -60,17 +60,17 @@ const promptIntern = () => {
       },
       {
         type: "input",
-        message: "What is your intern's ID?",
+        message: "What is the  intern's ID #?",
         name: "id"
       },
       {
         type: "input",
-        message: "What is your intern's email?",
+        message: "What is the intern's email?",
         name: "email"
       },
       {
         type: "input",
-        message: "What is your intern's school?",
+        message: "What is the intern's school?",
         name: "school"
       }
     ])
@@ -79,6 +79,51 @@ const promptIntern = () => {
         new Intern(intern.name, intern.id, intern.email, intern.school)
       );
       addHTML(new Intern(intern.name, intern.id, intern.email, intern.school));
+      promptTeamMember();
+    });
+};
+const promptEngineer = () => {
+  console.log("engineer!");
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is the engineer's name?",
+        name: "name"
+      },
+      {
+        type: "input",
+        message: "What is the engineer's ID?",
+        name: "id"
+      },
+      {
+        type: "input",
+        message: "What is the engineer's email?",
+        name: "email"
+      },
+      {
+        type: "input",
+        message: "What is the engineer's GitHub username?",
+        name: "github"
+      }
+    ])
+    .then(engineer => {
+      employees.push(
+        new Engineer(
+          engineer.name,
+          engineer.id,
+          engineer.email,
+          engineer.github
+        )
+      );
+      addHTML(
+        new Engineer(
+          engineer.name,
+          engineer.id,
+          engineer.email,
+          engineer.github
+        )
+      );
       promptTeamMember();
     });
 };
