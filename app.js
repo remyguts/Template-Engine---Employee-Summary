@@ -36,7 +36,7 @@ function promptUser() {
       {
         type: "input",
         name: "officeNumber",
-        message: "what is your office number"
+        message: "what is your office number?"
       }
     ])
     .then(manager => {
@@ -49,3 +49,36 @@ function promptUser() {
       promptTeamMember();
     });
 }
+const promptIntern = () => {
+  console.log("hey there, Intern!");
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is your intern's name?",
+        name: "name"
+      },
+      {
+        type: "input",
+        message: "What is your intern's ID?",
+        name: "id"
+      },
+      {
+        type: "input",
+        message: "What is your intern's email?",
+        name: "email"
+      },
+      {
+        type: "input",
+        message: "What is your intern's school?",
+        name: "school"
+      }
+    ])
+    .then(intern => {
+      employees.push(
+        new Intern(intern.name, intern.id, intern.email, intern.school)
+      );
+      addHTML(new Intern(intern.name, intern.id, intern.email, intern.school));
+      promptTeamMember();
+    });
+};
