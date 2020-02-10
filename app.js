@@ -1,5 +1,5 @@
 "use strict";
-
+//create variables for modules and other js files
 const inquirer = require("inquirer");
 const prompt = require("prompt");
 const fs = require("fs");
@@ -13,7 +13,7 @@ const init = () => {
   promptManager();
   startHTML();
 };
-
+//create initial prompts in inquirer for mananger
 function promptUser() {
   console.log("build your team");
   return inquirer
@@ -49,6 +49,7 @@ function promptUser() {
       promptTeamMember();
     });
 }
+//prompts for intern
 const promptIntern = () => {
   console.log("hey there, Intern!");
   inquirer
@@ -82,6 +83,7 @@ const promptIntern = () => {
       promptTeamMember();
     });
 };
+//promts for engineer
 const promptEngineer = () => {
   console.log("engineer!");
   inquirer
@@ -127,7 +129,7 @@ const promptEngineer = () => {
       promptTeamMember();
     });
 };
-
+//promts to ask how many teammates and what type
 const promptTeamMember = () => {
   inquirer
     .prompt([
@@ -152,7 +154,7 @@ const promptTeamMember = () => {
       }
     });
 };
-
+//creating the html
 const startHTML = () => {
   const topHTML = `<!DOCTYPE html>
     <html lang="en">
