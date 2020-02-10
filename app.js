@@ -127,3 +127,32 @@ const promptEngineer = () => {
       promptTeamMember();
     });
 };
+
+const promptTeamMember = () => {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Which type of team member would you like to add?",
+        name: "teamate",
+        choices: [
+          "Intern",
+          "Engineer",
+          "I don't want to add any more team members"
+        ]
+      }
+    ])
+    .then(function({ teamate }) {
+      switch (teamate) {
+        case "Intern":
+          promptIntern();
+          break;
+        case "Engineer":
+          promptEngineer();
+          break;
+        default:
+          console.log(`Finished building team!`);
+          endHTML();
+      }
+    });
+};
