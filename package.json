@@ -1,0 +1,29 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person.",
+  "main": "Employee.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.0.4",
+    "jest": "^25.1.0",
+    "prompt": "^1.0.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remyguts/Template-Engine---Employee-Summary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/remyguts/Template-Engine---Employee-Summary/issues"
+  },
+  "homepage": "https://github.com/remyguts/Template-Engine---Employee-Summary#readme"
+}
