@@ -175,3 +175,17 @@ const startHTML = () => {
     }
   });
 };
+const endHTML = () => {
+  const botHTML = `
+            </div>
+        </div>  
+    </body>
+</html>`;
+  fs.appendFile("./output/team.html", botHTML, function(err) {
+    if (err) {
+      console.error(err);
+    }
+  });
+};
+
+init();
