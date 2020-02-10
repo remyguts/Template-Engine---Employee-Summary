@@ -133,13 +133,9 @@ const promptTeamMember = () => {
     .prompt([
       {
         type: "list",
-        message: "Which type of team member would you like to add?",
+        message: "Which type of teammate would you like to add to your team?",
         name: "teamate",
-        choices: [
-          "Intern",
-          "Engineer",
-          "I don't want to add any more team members"
-        ]
+        choices: ["Intern", "Engineer", "I don't want any more teammates"]
       }
     ])
     .then(function({ teamate }) {
@@ -155,4 +151,27 @@ const promptTeamMember = () => {
           endHTML();
       }
     });
+};
+
+const startHTML = () => {
+  const topHTML = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Template Engine</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <h1 class="title text-white mx-auto">My Team</h1>
+        </nav>
+        <div class="container my-4">
+            <div class="row">`;
+  fs.writeFile("./output/team.html", topHTML, function(err) {
+    if (err) {
+      console.error(err);
+    }
+  });
 };
